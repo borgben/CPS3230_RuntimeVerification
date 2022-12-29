@@ -1,5 +1,8 @@
 package main;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -57,15 +60,26 @@ public class Alert  {
 			}
 				
 		}
+		
+		public String extractIconFile(String htmlBlock)
+		{
+			String pattern = "(?<=src=\").*(?=\" width)";
+			Pattern r = Pattern.compile(pattern);
+			Matcher m = r.matcher(htmlBlock);
+			m.find();
+			return m.group().replaceAll("/images/", "");
+			
+		}
 	    
 	    public void setDisplayAttributes(WebElement displayedAlert)
 	    {
+	    	
 	    	this.displayHeading = displayedAlert.findElement(By.tagName("h4")).getText();
 	    	this.displayDescription = displayedAlert.findElements(By.tagName("td")).get(2).getText();
 	    	this.displayPrice = displayedAlert.findElements(By.tagName("td")).get(3).getText();
 	    	this.displayUrl = displayedAlert.findElements(By.tagName("td")).get(4).findElement(By.tagName("a")).getAttribute("href");
 	    	this.displayImgUrl = displayedAlert.findElement(By.xpath("//td[@rowspan='4']")).findElement(By.tagName("img")).getAttribute("src");
-	    	this.iconType = mapIconToAlertType(displayedAlert.findElement(By.xpath("//td[@colspan='2']")).findElement(By.tagName("img")).getAttribute("src").replaceAll("https://www.marketalertum.com/images/", ""));
+	    	this.iconType = mapIconToAlertType(extractIconFile(displayedAlert.getAttribute("innerHTML").toString()));
 	    }
 
 	    public Alert(int alertType, String heading, String description, String url, String imageUrl, int priceInCents, String postedBy, String postDate) {

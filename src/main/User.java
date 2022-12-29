@@ -32,7 +32,6 @@ public class User {
 		
 		if (alerts.size()<=5)
 		{
-			System.out.println("Normal");
 			for (int i=0; i< alerts.size(); i++)
 			{
 				
@@ -41,16 +40,11 @@ public class User {
 				alerts.get(i).viewingAlert();
 			}
 		}else{
-			System.out.println("Greater");
-			int j = 0;
-			for (int i=alerts.size()-noDisplayedAlerts; i< alerts.size(); i++)
+			for (int i=0; i<5; i++)
 			{
-				System.out.println(j);
-				System.out.println(webScrapeAlerts.get(j).getAttribute("innerHTML"));
-				alerts.get(i).setDisplayAttributes(webScrapeAlerts.get(j));
+				alerts.get(i).setDisplayAttributes(webScrapeAlerts.get(i));
 				System.out.println("Alert Displayed Description " + alerts.get(i).displayDescription);
 				alerts.get(i).viewingAlert();
-				j++;
 			}
 		}
 

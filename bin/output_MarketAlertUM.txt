@@ -1,58 +1,81 @@
-[Users]AUTOMATON::> Users(main.User@335b5620 ) STATE::>loggedOut
-Alerts successfully deleted.
-[Users]MOVED ON METHODCALL: void main.User.alertsDeleted() TO STATE::> loggedOut
-[Users]AUTOMATON::> Users(main.User@335b5620 ) STATE::>loggedOut
-Alert successfully created.
-[Users]MOVED ON METHODCALL: void main.User.alertCreated() TO STATE::> loggedOut
-[Users]AUTOMATON::> Users(main.User@335b5620 ) STATE::>loggedOut
-Alert successfully created.
-[Users]MOVED ON METHODCALL: void main.User.alertCreated() TO STATE::> loggedOut
-[Users]AUTOMATON::> Users(main.User@335b5620 ) STATE::>loggedOut
-Alert successfully created.
-[Users]MOVED ON METHODCALL: void main.User.alertCreated() TO STATE::> loggedOut
-[Users]AUTOMATON::> Users(main.User@335b5620 ) STATE::>loggedOut
-Alert successfully created.
-[Users]MOVED ON METHODCALL: void main.User.alertCreated() TO STATE::> loggedOut
-[Users]AUTOMATON::> Users(main.User@335b5620 ) STATE::>loggedOut
-Alert successfully created.
-[Users]MOVED ON METHODCALL: void main.User.alertCreated() TO STATE::> loggedOut
-[Users]AUTOMATON::> Users(main.User@335b5620 ) STATE::>loggedOut
-Alert successfully created.
-[Users]MOVED ON METHODCALL: void main.User.alertCreated() TO STATE::> loggedOut
-[Users]AUTOMATON::> Users(main.User@335b5620 ) STATE::>loggedOut
+[Users]AUTOMATON::> Users(main.User@5a1de7fb ) STATE::>loggedOut
 Good login observed. true
 [Users]MOVED ON METHODCALL: void main.User.userValidLogin() TO STATE::> loggedIn
-[Users]AUTOMATON::> Users(main.User@335b5620 ) STATE::>loggedIn
+[Users]AUTOMATON::> Users(main.User@5a1de7fb ) STATE::>loggedIn
 User viewed alerts.
 [Users]MOVED ON METHODCALL: void main.User.userViewedAlerts(List, List) TO STATE::> loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=5, heading='Test5', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+Valid Alert Test5
+[Alerts]MOVED ON METHODCALL: void main.Alert.viewingAlert() TO STATE::> loggedIn
 [Alerts]AUTOMATON::> Alerts(Alert{alertType=4, heading='Test4', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
 Incompatible Icon and Alert Type!
 [Alerts]MOVED ON METHODCALL: void main.Alert.viewingAlert() TO STATE::> !!!SYSTEM REACHED BAD STATE!!! invalidAlert 
 aspects._asp_MarketAlertUM2.ajc$before$aspects__asp_MarketAlertUM2$2$38c7b789(_asp_MarketAlertUM2.aj:27)
-main.User.userViewedAlerts(User.java:52)
-main.User.matchEventToFn(User.java:77)
+main.User.userViewedAlerts(User.java:47)
+main.User.matchEventToFn(User.java:71)
 main.Runner.main(Runner.java:54) 
 [Alerts]AUTOMATON::> Alerts(Alert{alertType=2, heading='Test3', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
-Incompatible Icon and Alert Type!
-[Alerts]MOVED ON METHODCALL: void main.Alert.viewingAlert() TO STATE::> !!!SYSTEM REACHED BAD STATE!!! invalidAlert 
-aspects._asp_MarketAlertUM2.ajc$before$aspects__asp_MarketAlertUM2$2$38c7b789(_asp_MarketAlertUM2.aj:27)
-main.User.userViewedAlerts(User.java:52)
-main.User.matchEventToFn(User.java:77)
-main.Runner.main(Runner.java:54) 
+Valid Alert Test3
+[Alerts]MOVED ON METHODCALL: void main.Alert.viewingAlert() TO STATE::> loggedIn
 [Alerts]AUTOMATON::> Alerts(Alert{alertType=5, heading='Test2', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
 Valid Alert Test2
 [Alerts]MOVED ON METHODCALL: void main.Alert.viewingAlert() TO STATE::> loggedIn
 [Alerts]AUTOMATON::> Alerts(Alert{alertType=6, heading='Test1', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
-Incompatible Icon and Alert Type!
-[Alerts]MOVED ON METHODCALL: void main.Alert.viewingAlert() TO STATE::> !!!SYSTEM REACHED BAD STATE!!! invalidAlert 
-aspects._asp_MarketAlertUM2.ajc$before$aspects__asp_MarketAlertUM2$2$38c7b789(_asp_MarketAlertUM2.aj:27)
-main.User.userViewedAlerts(User.java:52)
-main.User.matchEventToFn(User.java:77)
-main.Runner.main(Runner.java:54) 
-[Alerts]AUTOMATON::> Alerts(Alert{alertType=3, heading='Test0', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
-Incompatible Icon and Alert Type!
-[Alerts]MOVED ON METHODCALL: void main.Alert.viewingAlert() TO STATE::> !!!SYSTEM REACHED BAD STATE!!! invalidAlert 
-aspects._asp_MarketAlertUM2.ajc$before$aspects__asp_MarketAlertUM2$2$38c7b789(_asp_MarketAlertUM2.aj:27)
-main.User.userViewedAlerts(User.java:52)
-main.User.matchEventToFn(User.java:77)
-main.Runner.main(Runner.java:54) 
+Valid Alert Test1
+[Alerts]MOVED ON METHODCALL: void main.Alert.viewingAlert() TO STATE::> loggedIn
+[Users]AUTOMATON::> Users(main.User@5a1de7fb ) STATE::>loggedIn
+Alerts successfully deleted.
+[Users]MOVED ON METHODCALL: void main.User.alertsDeleted() TO STATE::> loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=5, heading='Test5', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=4, heading='Test4', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>invalidAlert
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=2, heading='Test3', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=5, heading='Test2', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=6, heading='Test1', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Users]AUTOMATON::> Users(main.User@5a1de7fb ) STATE::>loggedIn
+Alert successfully created.
+[Users]MOVED ON METHODCALL: void main.User.alertCreated() TO STATE::> loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=5, heading='Test5', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=4, heading='Test4', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>invalidAlert
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=2, heading='Test3', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=5, heading='Test2', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=6, heading='Test1', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Users]AUTOMATON::> Users(main.User@5a1de7fb ) STATE::>loggedIn
+Alert successfully created.
+[Users]MOVED ON METHODCALL: void main.User.alertCreated() TO STATE::> loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=5, heading='Test5', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=4, heading='Test4', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>invalidAlert
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=2, heading='Test3', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=5, heading='Test2', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=6, heading='Test1', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Users]AUTOMATON::> Users(main.User@5a1de7fb ) STATE::>loggedIn
+Alert successfully created.
+[Users]MOVED ON METHODCALL: void main.User.alertCreated() TO STATE::> loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=5, heading='Test5', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=4, heading='Test4', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>invalidAlert
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=2, heading='Test3', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=5, heading='Test2', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=6, heading='Test1', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Users]AUTOMATON::> Users(main.User@5a1de7fb ) STATE::>loggedIn
+Alert successfully created.
+[Users]MOVED ON METHODCALL: void main.User.alertCreated() TO STATE::> loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=5, heading='Test5', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=4, heading='Test4', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>invalidAlert
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=2, heading='Test3', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=5, heading='Test2', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=6, heading='Test1', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Users]AUTOMATON::> Users(main.User@5a1de7fb ) STATE::>loggedIn
+Alert successfully created.
+[Users]MOVED ON METHODCALL: void main.User.alertCreated() TO STATE::> loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=5, heading='Test5', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=4, heading='Test4', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>invalidAlert
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=2, heading='Test3', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=5, heading='Test2', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=6, heading='Test1', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Users]AUTOMATON::> Users(main.User@5a1de7fb ) STATE::>loggedIn
+Alert successfully created.
+[Users]MOVED ON METHODCALL: void main.User.alertCreated() TO STATE::> loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=5, heading='Test5', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=4, heading='Test4', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>invalidAlert
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=2, heading='Test3', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=5, heading='Test2', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=6, heading='Test1', description='TestDescription', url='https://olimpusmusic.com/product/adam-audio-t7v/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=21900} ) STATE::>loggedIn

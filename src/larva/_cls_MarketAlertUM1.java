@@ -99,7 +99,7 @@ else if (no_automata < 0)
 }catch(Exception ex){ex.printStackTrace();}
 }
 
-int _state_id_Users = 100;
+int _state_id_Users = 5;
 
 public void _performLogic_Users(String _info, int... _event) {
 
@@ -107,79 +107,79 @@ _cls_MarketAlertUM0.pw.println("[Users]AUTOMATON::> Users("+u + " " + ") STATE::
 _cls_MarketAlertUM0.pw.flush();
 
 if (0==1){}
-else if (_state_id_Users==99){
+else if (_state_id_Users==4){
 		if (1==0){}
-		else if ((_occurredEvent(_event,144/*userLoggedOut*/)) && (loginState ==true )){
+		else if ((_occurredEvent(_event,2/*userLoggedOut*/)) && (loginState ==true )){
 		loginState =false ;
 _cls_MarketAlertUM0.pw .println ("Good logout observed. "+loginState );
 
-		_state_id_Users = 100;//moving to state loggedOut
+		_state_id_Users = 5;//moving to state loggedOut
 		_goto_Users(_info);
 		}
-		else if ((_occurredEvent(_event,142/*userValidLogin*/)) && (loginState ==true )){
+		else if ((_occurredEvent(_event,0/*userValidLogin*/)) && (loginState ==true )){
 		_cls_MarketAlertUM0.pw .println ("Invalid Login.");
 
-		_state_id_Users = 95;//moving to state invalidLogin
+		_state_id_Users = 0;//moving to state invalidLogin
 		_goto_Users(_info);
 		}
-		else if ((_occurredEvent(_event,150/*userViewedAlerts*/)) && (loginState ==true )){
+		else if ((_occurredEvent(_event,8/*userViewedAlerts*/)) && (loginState ==true )){
 		_cls_MarketAlertUM0.pw .println ("User viewed alerts.");
 
-		_state_id_Users = 99;//moving to state loggedIn
+		_state_id_Users = 4;//moving to state loggedIn
 		_goto_Users(_info);
 		}
-		else if ((_occurredEvent(_event,146/*alertCreated*/))){
+		else if ((_occurredEvent(_event,4/*alertCreated*/))){
 		_cls_MarketAlertUM0.pw .println ("Alert successfully created.");
 
-		_state_id_Users = 99;//moving to state loggedIn
+		_state_id_Users = 4;//moving to state loggedIn
 		_goto_Users(_info);
 		}
-		else if ((_occurredEvent(_event,148/*alertsDeleted*/))){
+		else if ((_occurredEvent(_event,6/*alertsDeleted*/))){
 		noAlerts =0 ;
 _cls_MarketAlertUM0.pw .println ("Alerts successfully deleted.");
 
-		_state_id_Users = 99;//moving to state loggedIn
+		_state_id_Users = 4;//moving to state loggedIn
 		_goto_Users(_info);
 		}
-		else if ((_occurredEvent(_event,150/*userViewedAlerts*/)) && (u .noDisplayedAlerts >5 )){
+		else if ((_occurredEvent(_event,8/*userViewedAlerts*/)) && (u .noDisplayedAlerts >5 )){
 		_cls_MarketAlertUM0.pw .println ("Number of alerts displayed to user exceeds 5!");
 
-		_state_id_Users = 98;//moving to state invalidNoAlertsDisplayed
+		_state_id_Users = 3;//moving to state invalidNoAlertsDisplayed
 		_goto_Users(_info);
 		}
 }
-else if (_state_id_Users==100){
+else if (_state_id_Users==5){
 		if (1==0){}
-		else if ((_occurredEvent(_event,142/*userValidLogin*/)) && (loginState ==false )){
+		else if ((_occurredEvent(_event,0/*userValidLogin*/)) && (loginState ==false )){
 		loginState =true ;
 _cls_MarketAlertUM0.pw .println ("Good login observed. "+loginState );
 
-		_state_id_Users = 99;//moving to state loggedIn
+		_state_id_Users = 4;//moving to state loggedIn
 		_goto_Users(_info);
 		}
-		else if ((_occurredEvent(_event,146/*alertCreated*/))){
+		else if ((_occurredEvent(_event,4/*alertCreated*/))){
 		_cls_MarketAlertUM0.pw .println ("Alert successfully created.");
 
-		_state_id_Users = 100;//moving to state loggedOut
+		_state_id_Users = 5;//moving to state loggedOut
 		_goto_Users(_info);
 		}
-		else if ((_occurredEvent(_event,148/*alertsDeleted*/))){
+		else if ((_occurredEvent(_event,6/*alertsDeleted*/))){
 		;
 _cls_MarketAlertUM0.pw .println ("Alerts successfully deleted.");
 
-		_state_id_Users = 100;//moving to state loggedOut
+		_state_id_Users = 5;//moving to state loggedOut
 		_goto_Users(_info);
 		}
-		else if ((_occurredEvent(_event,144/*userLoggedOut*/)) && (loginState ==false )){
+		else if ((_occurredEvent(_event,2/*userLoggedOut*/)) && (loginState ==false )){
 		_cls_MarketAlertUM0.pw .println ("Invalid Logout!");
 
-		_state_id_Users = 96;//moving to state invalidLogout
+		_state_id_Users = 1;//moving to state invalidLogout
 		_goto_Users(_info);
 		}
-		else if ((_occurredEvent(_event,150/*userViewedAlerts*/)) && (loginState ==false )){
+		else if ((_occurredEvent(_event,8/*userViewedAlerts*/)) && (loginState ==false )){
 		_cls_MarketAlertUM0.pw .println ("Invalid Alert Viewing! "+loginState );
 
-		_state_id_Users = 97;//moving to state invalidAlertViewing
+		_state_id_Users = 2;//moving to state invalidAlertViewing
 		_goto_Users(_info);
 		}
 }
@@ -192,12 +192,12 @@ _cls_MarketAlertUM0.pw.flush();
 
 public String _string_Users(int _state_id, int _mode){
 switch(_state_id){
-case 96: if (_mode == 0) return "invalidLogout"; else return "!!!SYSTEM REACHED BAD STATE!!! invalidLogout "+new _BadStateExceptionMarketAlertUM().toString()+" ";
-case 99: if (_mode == 0) return "loggedIn"; else return "loggedIn";
-case 100: if (_mode == 0) return "loggedOut"; else return "loggedOut";
-case 98: if (_mode == 0) return "invalidNoAlertsDisplayed"; else return "!!!SYSTEM REACHED BAD STATE!!! invalidNoAlertsDisplayed "+new _BadStateExceptionMarketAlertUM().toString()+" ";
-case 95: if (_mode == 0) return "invalidLogin"; else return "!!!SYSTEM REACHED BAD STATE!!! invalidLogin "+new _BadStateExceptionMarketAlertUM().toString()+" ";
-case 97: if (_mode == 0) return "invalidAlertViewing"; else return "!!!SYSTEM REACHED BAD STATE!!! invalidAlertViewing "+new _BadStateExceptionMarketAlertUM().toString()+" ";
+case 1: if (_mode == 0) return "invalidLogout"; else return "!!!SYSTEM REACHED BAD STATE!!! invalidLogout "+new _BadStateExceptionMarketAlertUM().toString()+" ";
+case 4: if (_mode == 0) return "loggedIn"; else return "loggedIn";
+case 5: if (_mode == 0) return "loggedOut"; else return "loggedOut";
+case 3: if (_mode == 0) return "invalidNoAlertsDisplayed"; else return "!!!SYSTEM REACHED BAD STATE!!! invalidNoAlertsDisplayed "+new _BadStateExceptionMarketAlertUM().toString()+" ";
+case 0: if (_mode == 0) return "invalidLogin"; else return "!!!SYSTEM REACHED BAD STATE!!! invalidLogin "+new _BadStateExceptionMarketAlertUM().toString()+" ";
+case 2: if (_mode == 0) return "invalidAlertViewing"; else return "!!!SYSTEM REACHED BAD STATE!!! invalidAlertViewing "+new _BadStateExceptionMarketAlertUM().toString()+" ";
 default: return "!!!SYSTEM REACHED AN UNKNOWN STATE!!!";
 }
 }

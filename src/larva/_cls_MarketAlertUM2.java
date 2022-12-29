@@ -87,7 +87,7 @@ else if (no_automata < 0)
 }catch(Exception ex){ex.printStackTrace();}
 }
 
-int _state_id_Alerts = 102;
+int _state_id_Alerts = 7;
 
 public void _performLogic_Alerts(String _info, int... _event) {
 
@@ -95,48 +95,48 @@ _cls_MarketAlertUM0.pw.println("[Alerts]AUTOMATON::> Alerts("+a + " " + ") STATE
 _cls_MarketAlertUM0.pw.flush();
 
 if (0==1){}
-else if (_state_id_Alerts==102){
+else if (_state_id_Alerts==7){
 		if (1==0){}
-		else if ((_occurredEvent(_event,152/*viewingAlert*/)) && (a .alertType !=a .iconType )){
+		else if ((_occurredEvent(_event,10/*viewingAlert*/)) && (a .alertType !=a .iconType )){
 		_cls_MarketAlertUM0.pw .println ("Incompatible Icon and Alert Type!");
 
-		_state_id_Alerts = 101;//moving to state invalidAlert
+		_state_id_Alerts = 6;//moving to state invalidAlert
 		_goto_Alerts(_info);
 		}
-		else if ((_occurredEvent(_event,152/*viewingAlert*/)) && (a .displayDescription ==null ||a .displayDescription =="")){
+		else if ((_occurredEvent(_event,10/*viewingAlert*/)) && (a .displayDescription ==null ||a .displayDescription =="")){
 		_cls_MarketAlertUM0.pw .println ("Alerts description not displayed!");
 
-		_state_id_Alerts = 101;//moving to state invalidAlert
+		_state_id_Alerts = 6;//moving to state invalidAlert
 		_goto_Alerts(_info);
 		}
-		else if ((_occurredEvent(_event,152/*viewingAlert*/)) && (a .displayHeading ==null ||a .displayHeading =="")){
+		else if ((_occurredEvent(_event,10/*viewingAlert*/)) && (a .displayHeading ==null ||a .displayHeading =="")){
 		_cls_MarketAlertUM0.pw .println ("Alerts heading not displayed!");
 
-		_state_id_Alerts = 101;//moving to state invalidAlert
+		_state_id_Alerts = 6;//moving to state invalidAlert
 		_goto_Alerts(_info);
 		}
-		else if ((_occurredEvent(_event,152/*viewingAlert*/)) && (a .displayPrice ==null ||a .displayPrice =="")){
+		else if ((_occurredEvent(_event,10/*viewingAlert*/)) && (a .displayPrice ==null ||a .displayPrice =="")){
 		_cls_MarketAlertUM0.pw .println ("Alerts price not displayed!");
 
-		_state_id_Alerts = 101;//moving to state invalidAlert
+		_state_id_Alerts = 6;//moving to state invalidAlert
 		_goto_Alerts(_info);
 		}
-		else if ((_occurredEvent(_event,152/*viewingAlert*/)) && (a .displayUrl ==null ||a .displayUrl =="")){
+		else if ((_occurredEvent(_event,10/*viewingAlert*/)) && (a .displayUrl ==null ||a .displayUrl =="")){
 		_cls_MarketAlertUM0.pw .println ("Link to original listing not displayed!");
 
-		_state_id_Alerts = 101;//moving to state invalidAlert
+		_state_id_Alerts = 6;//moving to state invalidAlert
 		_goto_Alerts(_info);
 		}
-		else if ((_occurredEvent(_event,152/*viewingAlert*/)) && (a .displayImgUrl ==null ||a .displayImgUrl =="")){
+		else if ((_occurredEvent(_event,10/*viewingAlert*/)) && (a .displayImgUrl ==null ||a .displayImgUrl =="")){
 		_cls_MarketAlertUM0.pw .println ("Item image not displayed!");
 
-		_state_id_Alerts = 101;//moving to state invalidAlert
+		_state_id_Alerts = 6;//moving to state invalidAlert
 		_goto_Alerts(_info);
 		}
-		else if ((_occurredEvent(_event,152/*viewingAlert*/))){
+		else if ((_occurredEvent(_event,10/*viewingAlert*/))){
 		_cls_MarketAlertUM0.pw .println ("Valid Alert "+a .heading );
 
-		_state_id_Alerts = 102;//moving to state loggedIn
+		_state_id_Alerts = 7;//moving to state loggedIn
 		_goto_Alerts(_info);
 		}
 }
@@ -149,8 +149,8 @@ _cls_MarketAlertUM0.pw.flush();
 
 public String _string_Alerts(int _state_id, int _mode){
 switch(_state_id){
-case 101: if (_mode == 0) return "invalidAlert"; else return "!!!SYSTEM REACHED BAD STATE!!! invalidAlert "+new _BadStateExceptionMarketAlertUM().toString()+" ";
-case 102: if (_mode == 0) return "loggedIn"; else return "loggedIn";
+case 6: if (_mode == 0) return "invalidAlert"; else return "!!!SYSTEM REACHED BAD STATE!!! invalidAlert "+new _BadStateExceptionMarketAlertUM().toString()+" ";
+case 7: if (_mode == 0) return "loggedIn"; else return "loggedIn";
 default: return "!!!SYSTEM REACHED AN UNKNOWN STATE!!!";
 }
 }
