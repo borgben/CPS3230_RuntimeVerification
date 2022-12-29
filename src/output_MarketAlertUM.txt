@@ -1,0 +1,56 @@
+[Users]AUTOMATON::> Users(main.User@5a1de7fb ) STATE::>loggedOut
+Good login observed. true
+[Users]MOVED ON METHODCALL: void main.User.userValidLogin() TO STATE::> loggedIn
+[Users]AUTOMATON::> Users(main.User@5a1de7fb ) STATE::>loggedIn
+User viewed alerts.
+[Users]MOVED ON METHODCALL: void main.User.userViewedAlerts(List) TO STATE::> loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=6, heading='Taylor', description='GS Mini-e Bass Koa
+Acoustic Bass with Pickup', url='https://olimpusmusic.com/product/gs-mini-e-bass-koa/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=99900} ) STATE::>loggedIn
+Valid Alert Taylor
+[Alerts]MOVED ON METHODCALL: void main.Alert.viewingAlert() TO STATE::> loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=6, heading='Gator', description='GC-BASS
+Case for Bass Guitars', url='https://olimpusmusic.com/product/gator-gc-bass-abs-case/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=12900} ) STATE::>loggedIn
+Valid Alert Gator
+[Alerts]MOVED ON METHODCALL: void main.Alert.viewingAlert() TO STATE::> loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=6, heading='', description='Fender – American Pro Jazz Bass V, Ash, Maple Fingerboard, Natura
+5-String Bass Guitar', url='https://olimpusmusic.com/product/fender-american-pro-jazz-bass-v-ash-maple-fingerboard-natura/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=189900} ) STATE::>loggedIn
+Valid Alert 
+[Alerts]MOVED ON METHODCALL: void main.Alert.viewingAlert() TO STATE::> loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=6, heading='', description='Fender- American Professional Jazz Bass Olympic White – Rosewood Fretboard
+4-String Bass Guitar', url='https://olimpusmusic.com/product/fender-american-professional-jazz-bass-olympic-white-rosewood-fretboard/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=149900} ) STATE::>loggedIn
+Valid Alert 
+[Alerts]MOVED ON METHODCALL: void main.Alert.viewingAlert() TO STATE::> loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=6, heading='Rockstand', description='Ply Wood A-Frame Stand – for Acoustic Guitar & Bass – Dark Brown Finish', url='https://olimpusmusic.com/product/ply-wood-a-frame-stand-for-acoustic-guitar-bass-dark-brown-finish/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=3900} ) STATE::>loggedIn
+Valid Alert Rockstand
+[Alerts]MOVED ON METHODCALL: void main.Alert.viewingAlert() TO STATE::> loggedIn
+[Users]AUTOMATON::> Users(main.User@5a1de7fb ) STATE::>loggedIn
+User viewed alerts.
+[Users]MOVED ON METHODCALL: void main.User.userViewedAlerts(List) TO STATE::> loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=6, heading='Taylor', description='GS Mini-e Bass Koa
+Acoustic Bass with Pickup', url='https://olimpusmusic.com/product/gs-mini-e-bass-koa/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=99900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=6, heading='Gator', description='GC-BASS
+Case for Bass Guitars', url='https://olimpusmusic.com/product/gator-gc-bass-abs-case/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=12900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=6, heading='', description='Fender – American Pro Jazz Bass V, Ash, Maple Fingerboard, Natura
+5-String Bass Guitar', url='https://olimpusmusic.com/product/fender-american-pro-jazz-bass-v-ash-maple-fingerboard-natura/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=189900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=6, heading='', description='Fender- American Professional Jazz Bass Olympic White – Rosewood Fretboard
+4-String Bass Guitar', url='https://olimpusmusic.com/product/fender-american-professional-jazz-bass-olympic-white-rosewood-fretboard/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=149900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=6, heading='Rockstand', description='Ply Wood A-Frame Stand – for Acoustic Guitar & Bass – Dark Brown Finish', url='https://olimpusmusic.com/product/ply-wood-a-frame-stand-for-acoustic-guitar-bass-dark-brown-finish/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=3900} ) STATE::>loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=6, heading='Taylor', description='GS Mini-e Bass Koa
+Acoustic Bass with Pickup', url='https://olimpusmusic.com/product/gs-mini-e-bass-koa/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=99900} ) STATE::>loggedIn
+Valid Alert Taylor
+[Alerts]MOVED ON METHODCALL: void main.Alert.viewingAlert() TO STATE::> loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=6, heading='Gator', description='GC-BASS
+Case for Bass Guitars', url='https://olimpusmusic.com/product/gator-gc-bass-abs-case/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=12900} ) STATE::>loggedIn
+Valid Alert Gator
+[Alerts]MOVED ON METHODCALL: void main.Alert.viewingAlert() TO STATE::> loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=6, heading='', description='Fender – American Pro Jazz Bass V, Ash, Maple Fingerboard, Natura
+5-String Bass Guitar', url='https://olimpusmusic.com/product/fender-american-pro-jazz-bass-v-ash-maple-fingerboard-natura/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=189900} ) STATE::>loggedIn
+Valid Alert 
+[Alerts]MOVED ON METHODCALL: void main.Alert.viewingAlert() TO STATE::> loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=6, heading='', description='Fender- American Professional Jazz Bass Olympic White – Rosewood Fretboard
+4-String Bass Guitar', url='https://olimpusmusic.com/product/fender-american-professional-jazz-bass-olympic-white-rosewood-fretboard/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=149900} ) STATE::>loggedIn
+Valid Alert 
+[Alerts]MOVED ON METHODCALL: void main.Alert.viewingAlert() TO STATE::> loggedIn
+[Alerts]AUTOMATON::> Alerts(Alert{alertType=6, heading='Rockstand', description='Ply Wood A-Frame Stand – for Acoustic Guitar & Bass – Dark Brown Finish', url='https://olimpusmusic.com/product/ply-wood-a-frame-stand-for-acoustic-guitar-bass-dark-brown-finish/', imageUrl='null', postedBy='5b403bf6-4f10-4bb3-ba93-54a4513864e2', priceInCents=3900} ) STATE::>loggedIn
+Valid Alert Rockstand
+[Alerts]MOVED ON METHODCALL: void main.Alert.viewingAlert() TO STATE::> loggedIn

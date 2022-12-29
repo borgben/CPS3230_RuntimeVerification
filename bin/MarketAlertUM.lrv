@@ -1,0 +1,79 @@
+IMPORTS{
+import main.User;
+import main.Alert;
+}
+GLOBAL {
+	FOREACH (User u){
+		VARIABLES {
+			int noAlerts = 0;
+			boolean loginState = false;
+		}
+		
+		EVENTS{
+			userValidLogin() = {User u1.userValidLogin()} where {u = u1;}
+			userLoggedOut() = {User u1.userLoggedOut()} where {u = u1;}
+			alertCreated() = {User u1.alertCreated()} where {u = u1;}
+			alertsDeleted() = {User u1.alertsDeleted()} where {u = u1;}
+			userViewedAlerts() = {User u1.userViewedAlerts()} where {u = u1;}
+		}
+		
+		PROPERTY Users{
+			STATES{
+				BAD{
+					invalidLogin
+					invalidLogout
+					invalidAlertViewing
+					invalidAlertCreation
+				}
+				NORMAL{
+					loggedIn
+				}
+				STARTING{
+					loggedOut
+				}
+			}
+			
+			TRANSITIONS{
+				loggedOut -> loggedIn [userValidLogin\loginState == false\loginState = true;System.out.println("Good login observed. " +loginState);]
+				loggedIn -> loggedOut [userLoggedOut\loginState == true\loginState = false;System.out.println("Good logout observed. " +loginState);]
+				loggedIn -> invalidLogin [userValidLogin\loginState == true\System.out.println("Invalid Login.");]
+				loggedIn -> loggedIn [userViewedAlerts\loginState == true\System.out.println("User viewed alerts.");]
+				loggedOut -> loggedOut [alertCreated\noAlerts<5\noAlerts++;System.out.println("Alert successfully created.");]
+				loggedOut -> loggedOut [alertsDeleted\\noAlerts=0;System.out.println("Alerts successfully deleted.");]
+				loggedIn -> loggedIn [alertCreated\noAlerts<5\noAlerts++;System.out.println("Alert successfully created.");]
+				loggedIn -> loggedIn [alertsDeleted\\noAlerts=0;System.out.println("Alerts successfully deleted.");]
+				loggedOut -> invalidLogout [userLoggedOut\loginState == false\System.out.println("Invalid Logout!");]
+				loggedOut -> invalidAlertViewing [userViewedAlerts\loginState == false\System.out.println("Invalid Alert Viewing!"+loginState);]
+				loggedOut -> loggedOut [alertCreated\noAlerts >= 5\System.out.println("Invalid alert creation!");]
+				loggedIn -> loggedIn [alertCreated\noAlerts >= 5\System.out.println("Invalid alert creation!");]
+			}
+		}
+		
+			FOREACH (Alert a){
+				EVENTS {
+					viewingAlert() = {Alert a1.viewingAlert()} where {a = a1;u=a.owner;}
+				}
+			
+				Property Alerts{
+					STATES{
+						BAD{
+							invalidAlert
+						}
+						STARTING{
+							loggedIn
+						}
+					}
+			
+					TRANSITIONS {
+						loggedIn -> invalidAlert [viewingAlert\a.alertType != a.iconType\System.out.println("Incompatible Icon and Alert Type!");]
+						loggedIn -> invalidAlert [viewingAlert\a.displayDescription == null || a.displayDescription == ""\System.out.println("Alerts description not displayed!");]
+						loggedIn -> invalidAlert [viewingAlert\a.displayHeading == null || a.displayHeading == ""\System.out.println("Alerts heading not displayed!");]
+						loggedIn -> invalidAlert [viewingAlert\a.displayPrice == null || a.displayPrice == ""\System.out.println("Alerts price not displayed!");]
+						loggedIn -> invalidAlert [viewingAlert\a.displayUrl == null || a.displayUrl == ""\System.out.println("Link to original listing not displayed!");]
+						loggedIn -> invalidAlert [viewingAlert\a.displayImgUrl == null || a.displayImgUrl == ""\System.out.println("Item image not displayed!");]
+						loggedIn -> loggedIn [viewingAlert\\System.out.println("Valid Alert " +a.heading);]
+				}
+			}
+		}	
+	}
+}

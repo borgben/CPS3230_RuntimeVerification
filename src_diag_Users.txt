@@ -1,0 +1,19 @@
+digraph _logic_Users {
+rankdir=LR;
+node [shape = circle]; loggedIn loggedOut;
+node [shape = octagon]; invalidLogin invalidLogout invalidAlertViewing invalidAlertCreation;
+node [shape = point]; _s_s;
+_s_s -> loggedOut;
+loggedIn -> loggedOut [ label = "(1) userLoggedOut\\loginState == true \\loginState = false ; System . out . println ( \" Good logout observed.  \" + loginState ) ; "];
+loggedIn -> invalidLogin [ label = "(2) userValidLogin\\loginState == true \\System . out . println ( \" Invalid Login. \" ) ; "];
+loggedIn -> loggedIn [ label = "(3) userViewedAlerts\\loginState == true \\System . out . println ( \" User viewed alerts. \" ) ; "];
+loggedIn -> loggedIn [ label = "(4) alertCreated\\noAlerts < 5 \\noAlerts ++ ; System . out . println ( \" Alert successfully created. \" ) ; "];
+loggedIn -> loggedIn [ label = "(5) alertsDeleted\\\\noAlerts = 0 ; System . out . println ( \" Alerts successfully deleted. \" ) ; "];
+loggedIn -> loggedIn [ label = "(6) alertCreated\\noAlerts >= 5 \\System . out . println ( \" Invalid alert creation! \" ) ; "];
+loggedOut -> loggedIn [ label = "(1) userValidLogin\\loginState == false \\loginState = true ; System . out . println ( \" Good login observed.  \" + loginState ) ; "];
+loggedOut -> loggedOut [ label = "(2) alertCreated\\noAlerts < 5 \\noAlerts ++ ; System . out . println ( \" Alert successfully created. \" ) ; "];
+loggedOut -> loggedOut [ label = "(3) alertsDeleted\\\\noAlerts = 0 ; System . out . println ( \" Alerts successfully deleted. \" ) ; "];
+loggedOut -> invalidLogout [ label = "(4) userLoggedOut\\loginState == false \\System . out . println ( \" Invalid Logout! \" ) ; "];
+loggedOut -> invalidAlertViewing [ label = "(5) userViewedAlerts\\loginState == false \\System . out . println ( \" Invalid Alert Viewing! \" + loginState ) ; "];
+loggedOut -> loggedOut [ label = "(6) alertCreated\\noAlerts >= 5 \\System . out . println ( \" Invalid alert creation! \" ) ; "];
+}
