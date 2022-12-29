@@ -23,7 +23,7 @@ GLOBAL {
 					invalidLogin
 					invalidLogout
 					invalidAlertViewing
-					invalidAlertCreation
+					invalidNoAlertsDisplayed
 				}
 				NORMAL{
 					loggedIn
@@ -38,14 +38,13 @@ GLOBAL {
 				loggedIn -> loggedOut [userLoggedOut\loginState == true\loginState = false;System.out.println("Good logout observed. " +loginState);]
 				loggedIn -> invalidLogin [userValidLogin\loginState == true\System.out.println("Invalid Login.");]
 				loggedIn -> loggedIn [userViewedAlerts\loginState == true\System.out.println("User viewed alerts.");]
-				loggedOut -> loggedOut [alertCreated\noAlerts<5\noAlerts++;System.out.println("Alert successfully created.");]
-				loggedOut -> loggedOut [alertsDeleted\\noAlerts=0;System.out.println("Alerts successfully deleted.");]
-				loggedIn -> loggedIn [alertCreated\noAlerts<5\noAlerts++;System.out.println("Alert successfully created.");]
+				loggedOut -> loggedOut [alertCreated\\System.out.println("Alert successfully created.");]
+				loggedOut -> loggedOut [alertsDeleted\\;System.out.println("Alerts successfully deleted.");]
+				loggedIn -> loggedIn [alertCreated\\System.out.println("Alert successfully created.");]
 				loggedIn -> loggedIn [alertsDeleted\\noAlerts=0;System.out.println("Alerts successfully deleted.");]
 				loggedOut -> invalidLogout [userLoggedOut\loginState == false\System.out.println("Invalid Logout!");]
-				loggedOut -> invalidAlertViewing [userViewedAlerts\loginState == false\System.out.println("Invalid Alert Viewing!"+loginState);]
-				loggedOut -> loggedOut [alertCreated\noAlerts >= 5\System.out.println("Invalid alert creation!");]
-				loggedIn -> loggedIn [alertCreated\noAlerts >= 5\System.out.println("Invalid alert creation!");]
+				loggedOut -> invalidAlertViewing [userViewedAlerts\loginState == false\System.out.println("Invalid Alert Viewing! "+loginState);]
+				loggedIn -> invalidNoAlertsDisplayed [userViewedAlerts\u.noDisplayedAlerts > 5\System.out.println("Number of alerts displayed to user exceeds 5!");]
 			}
 		}
 		

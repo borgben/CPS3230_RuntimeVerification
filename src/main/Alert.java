@@ -26,7 +26,7 @@ public class Alert  {
 	    public int iconType;
 	    
 	    
-	    public void viewingAlert() {}
+	    public void viewingAlert() {System.out.println(this.displayHeading);}
 	    public void incompleteAlert() {}
 	    public void invalidIconImg() {}
 	    
@@ -37,6 +37,7 @@ public class Alert  {
 	    
 		int mapIconToAlertType(String iconName)
 		{
+			System.out.println(iconName);
 			switch (iconName) {
 				case "icon-car.png":
 					return 1;
