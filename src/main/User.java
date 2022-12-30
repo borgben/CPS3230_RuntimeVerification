@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 public class User {
 	public String userId;
 	WebDriver driver;
+	public int noAlerts;
 	public int noDisplayedAlerts;
 	
 	public User(String userId)
@@ -56,18 +57,21 @@ public class User {
 		System.out.println(event.eventLogType);
 		switch (event.eventLogType) {
 			case 0:
+				this.noAlerts = event.systemState.alerts.size();
 				alertCreated();return;
 			case 1:
+				this.noAlerts = event.systemState.alerts.size();
 				alertsDeleted();return;
 			case 5:
 				this.userValidLogin();return;
 			case 6:
 				userLoggedOut();return;
 			case 7:
-				Thread.sleep(5000);
+				Thread.sleep(2000);
 				List<WebElement> webScrapeAlerts = driver.findElements(By.xpath("//table[@border='1']"));
 				System.out.println(webScrapeAlerts.size());
 				this.noDisplayedAlerts = webScrapeAlerts.size();
+				this.noAlerts = event.systemState.alerts.size();
 				userViewedAlerts(webScrapeAlerts, event.systemState.alerts);
 				return;
 			default:

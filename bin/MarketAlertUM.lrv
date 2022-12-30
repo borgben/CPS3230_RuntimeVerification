@@ -5,7 +5,6 @@ import main.Alert;
 GLOBAL {
 	FOREACH (User u){
 		VARIABLES {
-			int noAlerts = 0;
 			boolean loginState = false;
 		}
 		
@@ -23,6 +22,7 @@ GLOBAL {
 					invalidLogin
 					invalidLogout
 					invalidAlertViewing
+					invalidAlertDeletion
 					invalidNoAlertsDisplayed
 				}
 				NORMAL{
@@ -37,14 +37,16 @@ GLOBAL {
 				loggedOut -> loggedIn [userValidLogin\loginState == false\loginState = true;System.out.println("Good login observed. " +loginState);]
 				loggedIn -> loggedOut [userLoggedOut\loginState == true\loginState = false;System.out.println("Good logout observed. " +loginState);]
 				loggedIn -> invalidLogin [userValidLogin\loginState == true\System.out.println("Invalid Login.");]
-				loggedIn -> loggedIn [userViewedAlerts\loginState == true\System.out.println("User viewed alerts.");]
 				loggedOut -> loggedOut [alertCreated\\System.out.println("Alert successfully created.");]
-				loggedOut -> loggedOut [alertsDeleted\\;System.out.println("Alerts successfully deleted.");]
+				loggedOut -> loggedOut [alertsDeleted\u.noAlerts == 0\;System.out.println("Alerts successfully deleted.");]
+				loggedOut -> invalidAlertDeletion [alertsDeleted\u.noAlerts != 0\;System.out.println("Invalid deletion of Alerts!");]
 				loggedIn -> loggedIn [alertCreated\\System.out.println("Alert successfully created.");]
-				loggedIn -> loggedIn [alertsDeleted\\noAlerts=0;System.out.println("Alerts successfully deleted.");]
+				loggedIn -> loggedIn [alertsDeleted\\System.out.println("Alerts successfully deleted.");]
 				loggedOut -> invalidLogout [userLoggedOut\loginState == false\System.out.println("Invalid Logout!");]
 				loggedOut -> invalidAlertViewing [userViewedAlerts\loginState == false\System.out.println("Invalid Alert Viewing! "+loginState);]
-				loggedIn -> invalidNoAlertsDisplayed [userViewedAlerts\u.noDisplayedAlerts > 5\System.out.println("Number of alerts displayed to user exceeds 5!");]
+				loggedIn -> invalidNoAlertsDisplayed [userViewedAlerts\u.noAlerts <= 5 && u.noDisplayedAlerts != u.noAlerts \System.out.println("Mismatch number of actual alerts and displayed alerts!");]
+				loggedIn -> invalidNoAlertsDisplayed [userViewedAlerts\ u.noDisplayedAlerts > 5\System.out.println("Number of alerts displayed to user exceeds 5!");]
+				loggedIn -> loggedIn [userViewedAlerts\loginState == true\System.out.println("User viewed alerts.");]
 			}
 		}
 		
