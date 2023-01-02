@@ -24,8 +24,8 @@ u =a .owner ;
 
 _cls_MarketAlertUM2 _cls_inst = _cls_MarketAlertUM2._get_cls_MarketAlertUM2_inst( a,u);
 _cls_inst.a1 = a1;
-_cls_inst._call(thisJoinPoint.getSignature().toString(), 70/*viewingAlert*/);
-_cls_inst._call_all_filtered(thisJoinPoint.getSignature().toString(), 70/*viewingAlert*/);
+_cls_inst._call(thisJoinPoint.getSignature().toString(), 94/*viewingAlert*/);
+_cls_inst._call_all_filtered(thisJoinPoint.getSignature().toString(), 94/*viewingAlert*/);
 }
 }
 }

@@ -1,20 +1,21 @@
 digraph _logic_Users {
 rankdir=LR;
 node [shape = circle]; loggedIn loggedOut;
-node [shape = octagon]; invalidLogin invalidLogout invalidAlertViewing invalidAlertDeletion invalidNoAlertsDisplayed;
+node [shape = octagon]; invalidLogin invalidLogout invalidAlertViewing invalidAlertDeletion invalidNoAlertsDisplayed invalidAlertCreation;
 node [shape = point]; _s_s;
 _s_s -> loggedOut;
 loggedIn -> loggedOut [ label = "(1) userLoggedOut\\loginState == true \\loginState = false ; System . out . println ( \" Good logout observed.  \" + loginState ) ; "];
-loggedIn -> invalidLogin [ label = "(2) userValidLogin\\loginState == true \\System . out . println ( \" Invalid Login. \" ) ; "];
+loggedIn -> invalidLogin [ label = "(2) userValidLogin\\loginState == true \\System . out . println ( \" Invalid Login.\n \" ) ; "];
 loggedIn -> loggedIn [ label = "(3) alertCreated\\\\System . out . println ( \" Alert successfully created. \" ) ; "];
 loggedIn -> loggedIn [ label = "(4) alertsDeleted\\\\System . out . println ( \" Alerts successfully deleted. \" ) ; "];
 loggedIn -> invalidNoAlertsDisplayed [ label = "(5) userViewedAlerts\\u . noAlerts <= 5 && u . noDisplayedAlerts != u . noAlerts \\System . out . println ( \" Mismatch number of actual alerts and displayed alerts! \" ) ; "];
 loggedIn -> invalidNoAlertsDisplayed [ label = "(6) userViewedAlerts\\u . noDisplayedAlerts > 5 \\System . out . println ( \" Number of alerts displayed to user exceeds 5! \" ) ; "];
 loggedIn -> loggedIn [ label = "(7) userViewedAlerts\\loginState == true \\System . out . println ( \" User viewed alerts. \" ) ; "];
 loggedOut -> loggedIn [ label = "(1) userValidLogin\\loginState == false \\loginState = true ; System . out . println ( \" Good login observed.  \" + loginState ) ; "];
-loggedOut -> loggedOut [ label = "(2) alertCreated\\\\System . out . println ( \" Alert successfully created. \" ) ; "];
-loggedOut -> loggedOut [ label = "(3) alertsDeleted\\u . noAlerts == 0 \\; System . out . println ( \" Alerts successfully deleted. \" ) ; "];
-loggedOut -> invalidAlertDeletion [ label = "(4) alertsDeleted\\u . noAlerts != 0 \\; System . out . println ( \" Invalid deletion of Alerts! \" ) ; "];
-loggedOut -> invalidLogout [ label = "(5) userLoggedOut\\loginState == false \\System . out . println ( \" Invalid Logout! \" ) ; "];
-loggedOut -> invalidAlertViewing [ label = "(6) userViewedAlerts\\loginState == false \\System . out . println ( \" Invalid Alert Viewing!  \" + loginState ) ; "];
+loggedOut -> invalidAlertCreation [ label = "(2) alertCreated\\noAlerts != u . noAlerts - 1 \\System . out . println ( \" Alert creation failed! \" ) ; "];
+loggedOut -> loggedOut [ label = "(3) alertCreated\\noAlerts == u . noAlerts - 1 \\noAlerts ++ ; System . out . println ( \" Alert successfully created. \" ) ; "];
+loggedOut -> loggedOut [ label = "(4) alertsDeleted\\u . noAlerts == 0 \\; System . out . println ( \" Alerts successfully deleted.\n \" ) ; "];
+loggedOut -> invalidAlertDeletion [ label = "(5) alertsDeleted\\u . noAlerts != 0 \\; System . out . println ( \" Invalid deletion of Alerts! \" ) ; "];
+loggedOut -> invalidLogout [ label = "(6) userLoggedOut\\loginState == false \\System . out . println ( \" Invalid Logout! \" ) ; "];
+loggedOut -> invalidAlertViewing [ label = "(7) userViewedAlerts\\loginState == false \\System . out . println ( \" Invalid Alert Viewing!  \" + loginState ) ; "];
 }

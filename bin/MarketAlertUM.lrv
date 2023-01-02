@@ -6,6 +6,7 @@ GLOBAL {
 	FOREACH (User u){
 		VARIABLES {
 			boolean loginState = false;
+			int noAlerts =0;
 		}
 		
 		EVENTS{
@@ -24,6 +25,7 @@ GLOBAL {
 					invalidAlertViewing
 					invalidAlertDeletion
 					invalidNoAlertsDisplayed
+					invalidAlertCreation
 				}
 				NORMAL{
 					loggedIn
@@ -36,9 +38,10 @@ GLOBAL {
 			TRANSITIONS{
 				loggedOut -> loggedIn [userValidLogin\loginState == false\loginState = true;System.out.println("Good login observed. " +loginState);]
 				loggedIn -> loggedOut [userLoggedOut\loginState == true\loginState = false;System.out.println("Good logout observed. " +loginState);]
-				loggedIn -> invalidLogin [userValidLogin\loginState == true\System.out.println("Invalid Login.");]
-				loggedOut -> loggedOut [alertCreated\\System.out.println("Alert successfully created.");]
-				loggedOut -> loggedOut [alertsDeleted\u.noAlerts == 0\;System.out.println("Alerts successfully deleted.");]
+				loggedIn -> invalidLogin [userValidLogin\loginState == true\System.out.println("Invalid Login.\n");]
+				loggedOut -> invalidAlertCreation [alertCreated\noAlerts != u.noAlerts-1\System.out.println("Alert creation failed!");]
+				loggedOut -> loggedOut [alertCreated\noAlerts == u.noAlerts-1\noAlerts++;System.out.println("Alert successfully created.");]
+				loggedOut -> loggedOut [alertsDeleted\u.noAlerts == 0\;System.out.println("Alerts successfully deleted.\n");]
 				loggedOut -> invalidAlertDeletion [alertsDeleted\u.noAlerts != 0\;System.out.println("Invalid deletion of Alerts!");]
 				loggedIn -> loggedIn [alertCreated\\System.out.println("Alert successfully created.");]
 				loggedIn -> loggedIn [alertsDeleted\\System.out.println("Alerts successfully deleted.");]
@@ -61,18 +64,18 @@ GLOBAL {
 							invalidAlert
 						}
 						STARTING{
-							loggedIn
+							validAlert
 						}
 					}
 			
 					TRANSITIONS {
-						loggedIn -> invalidAlert [viewingAlert\a.alertType != a.iconType\System.out.println("Incompatible Icon and Alert Type!");]
-						loggedIn -> invalidAlert [viewingAlert\a.displayDescription == null || a.displayDescription == ""\System.out.println("Alerts description not displayed!");]
-						loggedIn -> invalidAlert [viewingAlert\a.displayHeading == null || a.displayHeading == ""\System.out.println("Alerts heading not displayed!");]
-						loggedIn -> invalidAlert [viewingAlert\a.displayPrice == null || a.displayPrice == ""\System.out.println("Alerts price not displayed!");]
-						loggedIn -> invalidAlert [viewingAlert\a.displayUrl == null || a.displayUrl == ""\System.out.println("Link to original listing not displayed!");]
-						loggedIn -> invalidAlert [viewingAlert\a.displayImgUrl == null || a.displayImgUrl == ""\System.out.println("Item image not displayed!");]
-						loggedIn -> loggedIn [viewingAlert\\System.out.println("Valid Alert " +a.heading);]
+						validAlert -> invalidAlert [viewingAlert\a.alertType != a.iconType\System.out.println("Incompatible Icon and Alert Type!");]
+						validAlert -> invalidAlert [viewingAlert\a.displayDescription == null || a.displayDescription == ""\System.out.println("Alerts description not displayed!");]
+						validAlert -> invalidAlert [viewingAlert\a.displayHeading == null || a.displayHeading == ""\System.out.println("Alerts heading not displayed!");]
+						validAlert -> invalidAlert [viewingAlert\a.displayPrice == null || a.displayPrice == ""\System.out.println("Alerts price not displayed!\n");]
+						validAlert -> invalidAlert [viewingAlert\a.displayUrl == null || a.displayUrl == ""\System.out.println("Link to original listing not displayed!");]
+						validAlert -> invalidAlert [viewingAlert\a.displayImgUrl == null || a.displayImgUrl == ""\System.out.println("Item image not displayed!");]
+						validAlert -> validAlert [viewingAlert\\System.out.println("Valid Alert " +a.heading);]
 				}
 			}
 		}	

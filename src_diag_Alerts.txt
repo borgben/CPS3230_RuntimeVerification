@@ -1,14 +1,14 @@
 digraph _logic_Alerts {
 rankdir=LR;
-node [shape = circle]; loggedIn;
+node [shape = circle]; validAlert;
 node [shape = octagon]; invalidAlert;
 node [shape = point]; _s_s;
-_s_s -> loggedIn;
-loggedIn -> invalidAlert [ label = "(1) viewingAlert\\a . alertType != a . iconType \\System . out . println ( \" Incompatible Icon and Alert Type! \" ) ; "];
-loggedIn -> invalidAlert [ label = "(2) viewingAlert\\a . displayDescription == null || a . displayDescription == \"  \" \\System . out . println ( \" Alerts description not displayed! \" ) ; "];
-loggedIn -> invalidAlert [ label = "(3) viewingAlert\\a . displayHeading == null || a . displayHeading == \"  \" \\System . out . println ( \" Alerts heading not displayed! \" ) ; "];
-loggedIn -> invalidAlert [ label = "(4) viewingAlert\\a . displayPrice == null || a . displayPrice == \"  \" \\System . out . println ( \" Alerts price not displayed! \" ) ; "];
-loggedIn -> invalidAlert [ label = "(5) viewingAlert\\a . displayUrl == null || a . displayUrl == \"  \" \\System . out . println ( \" Link to original listing not displayed! \" ) ; "];
-loggedIn -> invalidAlert [ label = "(6) viewingAlert\\a . displayImgUrl == null || a . displayImgUrl == \"  \" \\System . out . println ( \" Item image not displayed! \" ) ; "];
-loggedIn -> loggedIn [ label = "(7) viewingAlert\\\\System . out . println ( \" Valid Alert  \" + a . heading ) ; "];
+_s_s -> validAlert;
+validAlert -> invalidAlert [ label = "(1) viewingAlert\\a . alertType != a . iconType \\System . out . println ( \" Incompatible Icon and Alert Type! \" ) ; "];
+validAlert -> invalidAlert [ label = "(2) viewingAlert\\a . displayDescription == null || a . displayDescription == \"  \" \\System . out . println ( \" Alerts description not displayed! \" ) ; "];
+validAlert -> invalidAlert [ label = "(3) viewingAlert\\a . displayHeading == null || a . displayHeading == \"  \" \\System . out . println ( \" Alerts heading not displayed! \" ) ; "];
+validAlert -> invalidAlert [ label = "(4) viewingAlert\\a . displayPrice == null || a . displayPrice == \"  \" \\System . out . println ( \" Alerts price not displayed!\n \" ) ; "];
+validAlert -> invalidAlert [ label = "(5) viewingAlert\\a . displayUrl == null || a . displayUrl == \"  \" \\System . out . println ( \" Link to original listing not displayed! \" ) ; "];
+validAlert -> invalidAlert [ label = "(6) viewingAlert\\a . displayImgUrl == null || a . displayImgUrl == \"  \" \\System . out . println ( \" Item image not displayed! \" ) ; "];
+validAlert -> validAlert [ label = "(7) viewingAlert\\\\System . out . println ( \" Valid Alert  \" + a . heading ) ; "];
 }
