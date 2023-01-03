@@ -11,7 +11,7 @@ public class Runner{
 		{
 			List<Status> eventTrace = u1.getEventTrace();
 			for (Status event:eventTrace) {
-				System.out.println("\n$$$$$$$$ CurrentEvent $$$$$$$$$\n" + event);
+				System.out.println("\n$$$$$$$$ CurrentEvent $$$$$$$$$\n");
 				u1.matchEventToFn(event);
 			}
 		}

@@ -40,7 +40,6 @@ public class Alert  {
 	    
 		int mapIconToAlertType(String iconName)
 		{
-			System.out.println(iconName);
 			switch (iconName) {
 				case "icon-car.png":
 					return 1;
